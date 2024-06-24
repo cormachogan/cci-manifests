@@ -1,0 +1,12 @@
+apiVersion: authorization.cci.vmware.com/v1alpha1
+kind: ProjectRoleBinding
+metadata:
+  name: cci:user:rainpole.com:amaury
+  namespace: amaury-project
+roleRef:
+  apiGroup: authorization.cci.vmware.com
+  kind: ProjectRole
+  name: admin
+subjects:
+- kind: User
+  name: amaury@rainpole.com

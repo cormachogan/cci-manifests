@@ -1,0 +1,11 @@
+apiVersion: infrastructure.cci.vmware.com/v1alpha1
+kind: SupervisorNamespaceClassBinding
+metadata:
+  name: amaury-class
+  namespace: amaury-project
+spec:
+  overrideParameters:
+    - name: podCountLimit
+      type: Integer
+      const: 1000
+

@@ -1,0 +1,12 @@
+apiVersion: infrastructure.cci.vmware.com/v1alpha1
+kind: SupervisorNamespaceClass
+metadata:
+  name: amaury-class
+spec:
+  description: supervisor namespace class
+  parameters:
+    - name: podCountLimit
+      type: Integer
+      minimum: 100
+      maximum: 1000
+      default: 500

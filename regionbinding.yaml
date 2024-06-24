@@ -1,0 +1,5 @@
+apiVersion: topology.cci.vmware.com/v1alpha1
+kind: RegionBinding
+metadata:
+  name: amaury-region
+  namespace: amaury-project

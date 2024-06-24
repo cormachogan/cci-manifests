@@ -1,0 +1,23 @@
+apiVersion: infrastructure.cci.vmware.com/v1alpha1
+kind: SupervisorNamespaceClassConfig
+metadata:
+  name: amaury-class
+spec:
+  storageClasses:
+    - name: vsan-default-storage-policy
+  vmClasses:
+    - name: '*'
+  contentSources:
+    - name: '*'
+      type: ContentLibrary
+  # Below limits are an EXAMPLE! Setting them may cause unexpected behavior in your namespace
+  # Either set reasonable limits, or remove the below section to get unlimited resources
+  limits:
+    - name: pod_count
+      limit: "((parameters.podCountLimit))"
+  supervisorSelector:
+    matchExpressions:
+      - key: environment
+        operator: In
+        values:
+          - testing
